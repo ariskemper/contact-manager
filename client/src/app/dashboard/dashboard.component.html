@@ -1,0 +1,14 @@
+<nb-layout>
+  <nb-layout-header fixed>
+    <nb-user
+      [name]="getUser()"
+      class="user">
+    </nb-user>
+  </nb-layout-header>
+  <nb-sidebar responsive>
+    <nb-menu [items]="sideMenuItems"></nb-menu>
+  </nb-sidebar>
+  <nb-layout-column>
+    <router-outlet></router-outlet>
+  </nb-layout-column>
+</nb-layout>

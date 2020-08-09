@@ -1,0 +1,9 @@
+{
+	"extends": "tslint-config-standard-plus",
+	"rules": {
+		"prefer-for-of": true,
+		"quotemark": [true, "single"],
+        "indent": [true, "spaces", 2],
+        "space-before-function-paren": false
+	}
+}

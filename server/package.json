@@ -1,0 +1,87 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Server API",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "nest build",
+    "start": "node dist/main",
+    "start:dev": "export NODE_ENV=development && nest start --watch",
+    "start:debug": "nest start --debug --watch",
+    "lint-fix": "tslint --fix src/**/*.ts -t verbose",
+    "deploy:up": "docker-compose --env-file .env up -d --remove-orphans",
+    "deploy:list": "docker-compose --env-file .env ps",
+    "deploy:down": "docker-compose --env-file .env down",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:cov": "jest --coverage"
+  },
+  "keywords": [
+    "nestjs",
+    "server"
+  ],
+  "author": "Aris Kemper",
+  "license": "MIT",
+  "dependencies": {
+    "@nestjs/common": "^7.4.2",
+    "@nestjs/config": "^0.5.0",
+    "@nestjs/core": "^7.4.2",
+    "@nestjs/jwt": "^7.1.0",
+    "@nestjs/passport": "^7.1.0",
+    "@nestjs/platform-express": "^7.4.2",
+    "@nestjs/swagger": "^4.5.12",
+    "@nestjs/terminus": "^7.0.1",
+    "@nestjs/typeorm": "^7.1.0",
+    "@nestjsx/crud": "^4.6.2",
+    "@nestjsx/crud-typeorm": "^4.6.2",
+    "aws-lambda": "^1.0.6",
+    "aws-serverless-express": "^3.3.8",
+    "bcrypt": "^5.0.0",
+    "helmet": "^4.0.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "pg": "^8.3.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^6.6.2",
+    "swagger-ui-express": "^4.1.4",
+    "typeorm": "^0.2.25"
+  },
+  "devDependencies": {
+    "@hewmen/serverless-plugin-typescript": "^1.1.17",
+    "@nestjs/testing": "^7.4.2",
+    "@types/helmet": "0.0.47",
+    "@types/jest": "^26.0.9",
+    "@types/node": "^14.0.27",
+    "@types/passport-jwt": "^3.0.3",
+    "class-transformer": "^0.3.1",
+    "class-validator": "^0.12.2",
+    "jest": "^26.2.2",
+    "plugin": "^0.3.3",
+    "serverless-offline": "^6.5.0",
+    "serverless-plugin-optimize": "^4.1.4-rc.1",
+    "serverless-plugin-typescript": "^1.1.9",
+    "serverless-plugin-warmup": "^4.9.0",
+    "ts-jest": "^26.1.4",
+    "ts-node": "^8.10.2",
+    "ts-node-dev": "^1.0.0-pre.56",
+    "tslint": "^6.1.3",
+    "tslint-config-standard-plus": "^2.3.0",
+    "typescript": "^3.9.7"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "verbose": true
+  }
+}

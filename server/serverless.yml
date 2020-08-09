@@ -1,0 +1,30 @@
+service:
+  name: server-api
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-plugin-optimize
+  - serverless-offline
+  - serverless-plugin-warmup
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: eu-west-2
+
+package:
+  exclude:
+    - .git/**
+    - src/**
+    - test/**
+    - e2e/**
+    - README.md
+
+functions:
+  main: # The name of the lambda function
+    # The module 'handler' is exported in the file 'src/lambda'
+    handler: src/serverless.handler
+    events:
+     - http:
+        method: any
+        path: /{any+}

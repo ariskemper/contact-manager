@@ -1,0 +1,19 @@
+# dependencies
+node_modules/
+
+# IDE
+/.vscode
+
+# misc
+.DS_Store
+*.log
+
+# environment
+.env
+
+# build
+/dist
+
+# tests
+/coverage
+/.nyc_output
